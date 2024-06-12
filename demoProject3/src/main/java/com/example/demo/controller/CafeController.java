@@ -1,0 +1,44 @@
+package com.example.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.demo.model.dto.CafeDTO;
+
+import lombok.extern.slf4j.Slf4j;
+
+//@어노테이션 Controller RequestMapping Slf4j
+@Controller
+@RequestMapping("cafe")
+@Slf4j
+public class CafeController {
+	//@어노테이션 PostMapping(만남의주소)
+	//메서드 cafeMainComment
+	@PostMapping("comment")
+	public String cafecomment(CafeDTO cafedto) {
+	CafeDTO cd = new CafeDTO();
+	cd.getMenu();
+	cd.getLocation();
+	cd.getSidebar();
+		
+	log.info("카페 메인으로 이동하기");
+	log.info("cd에 작성한 내용 보기" + cd.toString());
+	return "redirect:/cafe/cafe_index";
+	
+	}
+	
+	
+	/*public String cafeMainComment(@RequestParam("cafeCommentName") String cafeCommentName,
+								  @RequestParam("cafeCommentOpinion") String cafeCommentOpinion
+			) {
+	log.info("카페 메인으로 이동하기");
+		log.debug("cafeCommentName : " + cafeCommentName);
+		log.debug("cafeCommentOpinion : " + cafeCommentOpinion);
+		return "redirect:/cafe/cafe_index";*/
+	}
+	//@어노테이션 RequestParam cafeCommentName cafeCommentOpinion
+		//log info로 들어왔는지 확인
+		//log debug로  cafeCommentName cafeCommentOpinion 넣기
+	//return redirect cafe_index로 돌아가기 
