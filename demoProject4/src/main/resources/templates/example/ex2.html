@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>타임리프 예제2</title>
+</head>
+<body>
+	<h1>타임리프 예제2</h1>
+
+	<h3>요청위임된 request에 존재하는 파라미터 출력하기</h3>
+
+	<pre>
+		${param.key}
+		-request 존재하는 parameter(매개변수)값 출력
+	</pre>
+
+	<ul>
+		<li th:text="${param.inputName">제출된이름</li>
+		<li th:text="${param.inputAge">제출된나이</li>
+		
+		<!-- 같은 name 속성값을 가진 파라미터는 배열로전달-->
+		<li th:text="${param.color">체크된색상</li>
+		<!-- color로 전달받은값이 없으면 null==빈칸으로보임 
+		반복해야될 값이 없으면 반복을 하지않는것이지 
+		특별한 에러가 보이진 않음-->
+		
+	</ul>
+	<hr>
+
+
+</body>
+</html>

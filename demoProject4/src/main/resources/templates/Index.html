@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="htttp://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <title>ThymeLeaf</title>
@@ -37,7 +37,30 @@
 
 	<ol>
 		<li><a href="/example/ex1">타임리프 예제</a>
+		</li>
+		<li>
+			<form action="/example/ex2" method="post">
+			<h4>타임리프예제</h4>
+			이름 : <input type="text" name="inputName">
+			나이 : <input type="number" name="inputAge">
+			
+			<br>
+			
+			색상:
+			RED<input type="checkbox"name="color" value="Red">
+			RED<input type="checkbox"name="color" value="Green">
+			RED<input type="checkbox"name="color" value="Blue">
+			
+			<button>제출하기</button>
+			
+			<li>
+				<a href="/example/ex3">타임리프예제3</a>
+			</li>
+		
+		
 	</ol>
+
+	
 
 
 </body>
